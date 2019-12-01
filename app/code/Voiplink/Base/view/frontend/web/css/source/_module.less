@@ -1,0 +1,220 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .sidebar-megamenu {
+        .vertical-type {
+            > li {
+                > a {
+                    display: none !important;
+                }
+                > .sm-megamenu-child {
+                    width: 100% !important;
+                    position: static !important;
+                    display: block !important;
+                    > .sm_megamenu_title {
+                        display: none !important;
+                    }
+                    .sm_megamenu_content {
+                        #vertical-menu {
+                            .navigation {
+                                > ul {
+                                    &:before {
+                                        display: none;
+                                    }
+                                }
+                                ul {
+                                    > li {
+                                        position: static !important;
+                                        padding: 6px 0;
+                                        .submenu:not(.active) {
+                                            display: none !important;
+                                        }
+                                        &.level0 {
+                                            > .submenu {
+                                                padding-left: 20px;
+                                                width: 100%;
+                                            }
+                                        }
+                                        &:hover {
+                                            > a {
+                                                color: #88b04b;
+                                                background: none;
+                                                &:before {
+                                                    display: none !important;
+                                                }
+                                            }
+                                        }
+                                        a {
+                                            padding: 0;
+                                            background: none;
+                                            &:before {
+                                                display: none !important;
+                                            }
+                                        }
+                                        .ui-menu-icon {
+                                            float: right;
+                                            width: 40px;
+                                            text-align: right;
+                                            &:after {
+                                                content: '\f078';
+                                                font-family: FontAwesome;
+                                            }
+                                            &.open {
+                                                &:after {
+                                                    content: '\f077';
+                                                }
+                                            }
+                                        }
+                                    }
+                                    li.parent {
+                                        > a:after {
+                                            display: none !important;
+                                        }
+                                    }
+                                    &.submenu.active {
+                                        display: block !important;
+                                        position: static !important;
+                                        box-shadow: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-container {
+        .search-wrapper {
+            .searchbox {
+                .searchbox-cat {
+                    display: none;
+                }
+                #searchbox {
+                    padding-left: 10px !important;
+                }
+            }
+        }
+        .header-bottom {
+            background: #e5e5e5 !important;
+            .main-megamenu {
+                #horizontal-menu {
+                    > li {
+                        float: left;
+                        margin-right: 35px;
+                        &:hover {
+                            display: block;
+                        }
+                        &.ui-menu-icon {
+                            &:after {
+                                content: '\f078';
+                                font-family: FontAwesome;
+                            }
+                            &:hover {
+                                color: #88b04b;
+                                ul {
+                                    display: block !important;
+                                    background: #fff!important;
+                                    border: 1px solid #c9c9c9;
+                                    position: absolute;
+                                    z-index: 9;
+                                    min-width: 220px;
+                                    width: auto;
+                                    &:before {
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        margin-left: 10px;
+                                        top: -19px;
+                                        border-width: 10px;
+                                        border-style: solid outset solid solid;
+                                        color: #fff;
+                                        display: block!important;
+                                        border-color: transparent transparent #fff!important;
+                                        z-index: 999;
+                                        width: 10px;
+                                        font-size: 15px;
+                                    }
+                                    a {
+                                        padding: 0 10px;
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+                        }
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        ul {
+                            display: none;
+                        }
+                        a {
+                            line-height: 50px;
+                            padding-top: 0!important;
+                            padding-bottom: 0!important;
+                            font-weight: 700;
+                            font-size: 15px;
+                            color: #545454;
+                            &:hover {
+                                color: #88b04b;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+//
+//  Max Width 992
+//  _____________________________________________
+
+@media(max-width: 992px) {
+    .page-wrapper {
+        .header-container {
+            .sidebar-megamenu {
+                #navigation-mobile {
+                    padding-top: 10px;
+                }
+                .vertical-type {
+                    > li {
+                        padding: 0;
+                        .btn-submobile {
+                            display: none !important;
+                        }
+                        > .sm-megamenu-child {
+                            padding: 0;
+                            .sm_megamenu_content {
+                                #vertical-menu {
+                                    .navigation {
+                                        ul {
+                                            > li {
+                                                border-bottom: none;
+                                                > a {
+                                                    padding-left: 0;
+                                                    &:before {
+                                                        display: none;
+                                                    }
+                                                }
+                                                &.has-active, &.active {
+                                                    > a {
+                                                        color: #88b04b;
+                                                        background: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
