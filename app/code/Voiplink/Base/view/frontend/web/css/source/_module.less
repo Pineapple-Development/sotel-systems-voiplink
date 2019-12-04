@@ -108,41 +108,52 @@
                             display: block;
                         }
                         &.ui-menu-icon {
-                            &:after {
-                                content: '\f078';
-                                font-family: FontAwesome;
+                            .ui-icon {
                                 cursor: pointer;
+                                &:after {
+                                    content: '\f078';
+                                    font-family: FontAwesome;
+                                }
+                            }
+                            &.open {
+                                .ui-icon {
+                                    &:after {
+                                        content: '\f077';
+                                    }
+                                }
+                                ul {
+                                    display: block !important;
+                                }
+                            }
+                            ul {
+                                background: #fff!important;
+                                border: 1px solid #c9c9c9;
+                                position: absolute;
+                                z-index: 9;
+                                min-width: 220px;
+                                width: auto;
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    margin-left: 10px;
+                                    top: -19px;
+                                    border-width: 10px;
+                                    border-style: solid outset solid solid;
+                                    color: #fff;
+                                    display: block!important;
+                                    border-color: transparent transparent #fff!important;
+                                    z-index: 999;
+                                    width: 10px;
+                                    font-size: 15px;
+                                }
+                                a {
+                                    padding: 0 10px;
+                                    font-size: 12px;
+                                }
                             }
                             &:hover {
                                 color: #88b04b;
-                                ul {
-                                    display: block !important;
-                                    background: #fff!important;
-                                    border: 1px solid #c9c9c9;
-                                    position: absolute;
-                                    z-index: 9;
-                                    min-width: 220px;
-                                    width: auto;
-                                    &:before {
-                                        content: '';
-                                        position: absolute;
-                                        left: 0;
-                                        margin-left: 10px;
-                                        top: -19px;
-                                        border-width: 10px;
-                                        border-style: solid outset solid solid;
-                                        color: #fff;
-                                        display: block!important;
-                                        border-color: transparent transparent #fff!important;
-                                        z-index: 999;
-                                        width: 10px;
-                                        font-size: 15px;
-                                    }
-                                    a {
-                                        padding: 0 10px;
-                                        font-size: 12px;
-                                    }
-                                }
                             }
                         }
                         &:last-child {
@@ -171,6 +182,30 @@
 }
 
 //
+//  Min Width 993
+//  _____________________________________________
+
+@media(min-width: 993px) {
+    .header-container {
+        .header-bottom {
+            .main-megamenu {
+                #horizontal-menu {
+                    > li {
+                        &.ui-menu-icon {
+                            &:hover {
+                                ul {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
 //  Max Width 992
 //  _____________________________________________
 
@@ -188,11 +223,13 @@
                                 margin-right: 0;
                                 &.ui-menu-icon {
                                     position: relative;
-                                    &:after {
+                                    .ui-icon {
                                         float: right;
                                         position: absolute;
-                                        top: 14px;
+                                        top: 15px;
                                         right: 0;
+                                        display: inline-block;
+                                        line-height: 16px;
                                     }
                                     &:hover {
                                         ul {

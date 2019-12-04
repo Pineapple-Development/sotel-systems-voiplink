@@ -50,5 +50,17 @@
 
         moveMainMenu();
 
+        $('body').on('click', '#horizontal-menu .ui-icon',function (e) {
+            if($(window).width() < 993) {
+                e.preventDefault();
+                $(this).parent().next('ul').toggleClass('active');
+                if($(this).parent().parent('.ui-menu-icon').hasClass('open')) {
+                    $(this).parent().parent('.ui-menu-icon').removeClass('open')
+                }else {
+                    $(this).parent().parent('.ui-menu-icon')    .addClass('open');
+                }
+            }
+        });
+
     });
 </script>
