@@ -35,5 +35,20 @@
                 $(this).addClass('open');
             }
         });
+
+        $(window).on('resize', function(){
+            moveMainMenu();
+        });
+
+        function moveMainMenu() {
+            if($(window).width() < 992) {
+                $('#navigation-mobile').prepend($('.main-megamenu'));
+            } else {
+                $('.header-bottom > .container > .row').append($('.main-megamenu'))
+            }
+        }
+
+        moveMainMenu();
+
     });
 </script>

@@ -14,7 +14,7 @@
                     position: static !important;
                     display: block !important;
                     > .sm_megamenu_title {
-                        display: none !important;
+                        display: none;
                     }
                     .sm_megamenu_content {
                         #vertical-menu {
@@ -111,6 +111,7 @@
                             &:after {
                                 content: '\f078';
                                 font-family: FontAwesome;
+                                cursor: pointer;
                             }
                             &:hover {
                                 color: #88b04b;
@@ -179,8 +180,37 @@
             .sidebar-megamenu {
                 #navigation-mobile {
                     padding-top: 10px;
+                    .main-megamenu {
+                        display: block;
+                        #horizontal-menu {
+                            > li {
+                                width: 100%;
+                                margin-right: 0;
+                                &.ui-menu-icon {
+                                    position: relative;
+                                    &:after {
+                                        float: right;
+                                        position: absolute;
+                                        top: 14px;
+                                        right: 0;
+                                    }
+                                    &:hover {
+                                        ul {
+                                            position: static;
+                                            border: none;
+                                        }
+                                    }
+                                }
+                            }
+                            a {
+                                font-size: 13px !important;
+                                font-weight: 400 !important;
+                            }
+                        }
+                    }
                 }
                 .vertical-type {
+                    clear: both;
                     > li {
                         padding: 0;
                         .btn-submobile {
@@ -188,6 +218,15 @@
                         }
                         > .sm-megamenu-child {
                             padding: 0;
+                            > .sm_megamenu_title {
+                                display: block;
+                                border-bottom: 1px solid grey;
+                                padding-bottom: 5px;
+                                margin-bottom: 10px;
+                                margin-top: 23px;
+                                clear: both;
+                                padding-top: 20px;
+                            }
                             .sm_megamenu_content {
                                 #vertical-menu {
                                     .navigation {
