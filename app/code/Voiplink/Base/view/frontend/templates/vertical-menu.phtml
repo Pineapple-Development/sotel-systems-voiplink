@@ -38,6 +38,7 @@
 
         $(window).on('resize', function(){
             moveMainMenu();
+            moveSidebarMenu();
         });
 
         function moveMainMenu() {
@@ -61,6 +62,19 @@
                 }
             }
         });
+
+        function moveSidebarMenu() {
+            if($('body').hasClass('cms-index-index')) {
+                if($(window).width() > 1199) {
+                    $("#maincontent .home-style > .row ").prepend($('.sidebar-megamenu .megamenu-content-sidebar .menu-ver-content'));
+                } else {
+                    $('.sidebar-megamenu .megamenu-content-sidebar').append($('.menu-ver-content'));
+                }
+
+            }
+        }
+
+        moveSidebarMenu();
 
     });
 </script>
